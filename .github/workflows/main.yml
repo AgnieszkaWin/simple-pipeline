@@ -14,7 +14,7 @@ with:
 node-version: '16'
 
 name: Install dependencies
-run: [INSTALL_COMMAND]
+run: run: npm install jest
 
-name: run [description of task]
-run: [command to run]
+name: run test
+run: test
