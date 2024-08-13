@@ -1,20 +1,23 @@
 name: pipeline_workflow
-on: workflow_dispatch
+
+on:
+  workflow_dispatch:
+
 jobs:
-SumOfAAndB
-runs-on: ubuntu-latest
+  SumOfAAndB:
+    runs-on: ubuntu-latest
 
-steps:
-name: Checkout repository
-uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-name: setup node.js
-uses: actions/setup-node@v3
-with:
-node-version: '16'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-name: Install dependencies
-run: run: npm install jest
+      - name: Install dependencies
+        run: npm install
 
-name: run test
-run: test
+      - name: Run tests
+        run: npm test
